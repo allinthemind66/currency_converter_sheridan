@@ -1,1 +1,10 @@
 /* TODO:  *//* REDUCE WIDTH AND DISPLAY INLINE FOR INPUTS */
+
+input.curr_input.form-control.mb-2{
+  display: inline;
+  width:250px;
+}
+select.curr_select_one.custom-select, select.curr_select_two.custom-select {
+  display: inline;
+  width:250px;
+}
