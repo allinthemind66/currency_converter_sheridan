@@ -8,26 +8,39 @@ const amountToAmountDiv = document.querySelector('.amount_to_amount')
 let inputAmount = document.querySelector('.curr_input')
 let value1 = value1Select.value;
 let value2 = value2Select.value;
+let currenctConversionRate;
 
+// Get initial data
+getData()
 // ADD EVENT LISTENERS TO BUTTON AND FIELDS
+//Whenver we change a field, we get the current conversion rate
 value1Select.addEventListener('change', () => {
   value1 = value1Select.value
+  getData()
 });
 value2Select.addEventListener('change', () => {
   value2 = value2Select.value
+  getData()
 });
+
+//these two functions should not fetch data from the backend. store current conversion data locally
+//whenver we switch currencies.
 inputAmount.addEventListener('input', (e) => {
-  console.log(inputAmount.value)
+  amountToAmountDiv.innerHTML = `There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}`
+})
+inputAmount.addEventListener('change', (e) => {
+  amountToAmountDiv.innerHTML = `There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}`
+
 })
 
-submitButton.addEventListener('click', () => {
-  try {
-    getData()
-  }
-  catch(error) {
-    console.log(error);
-  }
-});
+// submitButton.addEventListener('click', () => {
+//   try {
+//     getData()
+//   }
+//   catch(error) {
+//     console.log(error);
+//   }
+// });
 
 //GET ALL DATA FROM BACKEND
 // TODO: MAKE THIS A LITTLE CLEANER. DO WE REALLY NEED ALL CURRENCY DATA??
@@ -43,6 +56,10 @@ function checkDataForContent(json){
   if(json[`${value1}_${value2}`]){
     //this is the value
     console.log('this is the cached value', json[`${value1}_${value2}`])
+    //store current conversion rate locally so we don't have to keep calling backendAPI
+    //when we change an amount input
+    // currenctConversionRate = `${json[`${value1}_${value2}`]}`
+    //maybe change the set value here..
     renderData(json)
   } else{
   //if not, make a call to the api
@@ -73,6 +90,7 @@ function addDataToBackend(json){
 }
 
 function renderData(json) {
+  currenctConversionRate = `${json[`${value1}_${value2}`]}`
   resultDiv.innerText = `The current conversion rate is ${(+json[`${value1}_${value2}`])} ${value2} per ${value1}`
-  amountToAmountDiv.innerText = `There are ${(+json[`${value1}_${value2}`]) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}`
+  amountToAmountDiv.innerText = `There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}`
 }

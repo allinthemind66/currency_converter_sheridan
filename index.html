@@ -14,22 +14,22 @@
         </div>
       </header>
     </div>
-    <input class="curr_input form-control mb-2" placeholder="Enter amount..."></input>
+    <input class="curr_input form-control mb-2" type='number' min='0' placeholder="Enter amount..."></input>
     <br>
     <!-- Convert In ALL DIRECTIONS -->
-    <strong> FROM </strong>
+    <strong> FROM: </strong>
     <select id="CURR_FR" class="curr_select_one custom-select">
         <option value="EUR">EUR</option>
         <option value="SDG">SDG</option>
         <option value="USD" selected="">USD</option>
       </select>
-      <strong> TO </strong>
+      <strong> TO: </strong>
     <select id="CURR_FR" class="curr_select_two custom-select">
       <option value="EUR">EUR</option>
       <option value="SDG">SDG</option>
       <option value="USD" selected="">USD</option>
     </select>
-    <button class='btn btn-primary'>Convert!</button>
+    <!-- <button class='btn btn-primary'>Convert!</button> -->
     <div class="result"></div>
     <div class="amount_to_amount"></div>
 
