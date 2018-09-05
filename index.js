@@ -7,12 +7,42 @@ let value1Select = document.querySelector('.curr_select_one');
 let value2Select = document.querySelector('.curr_select_two');
 let value1 = value1Select.value;
 let value2 = value2Select.value;
+let currencyAPI = `https://free.currencyconverterapi.com/api/v6/convert?q=${value1}_${value2}&compact=y`;
+let backendAPI = 'http://localhost:3000/currency'
 value1Select.addEventListener('change', () => {
-  console.log('value 1 is ', value1Select.value)
+  value1 = value1Select.value
 });
 value2Select.addEventListener('change', () => {
-  console.log('value 2 is ', value2Select.value)
+  value2 = value2Select.value
 });
+
+function checkDataForContent(json){
+  if(json[`${value1}_${value2}`]){
+    console.log(json[`${value1}_${value2}`])
+  } else{
+    console.log('no')
+  }
+}
+
+async function getDataFromApi(){
+  // await fetch()
+}
+
+function addDataToBackend(){
+
+}
+
+
+async function getData() {
+  await fetch(backendAPI)
+  .then(resp => resp.json())
+  .then(json => checkDataForContent(json))
+}
 submitButton.addEventListener('click', () => {
-  console.log("I'm converting!");
+  try {
+    getData()
+  }
+  catch(error) {
+    console.log(error);
+  }
 });
