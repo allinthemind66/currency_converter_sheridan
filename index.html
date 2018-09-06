@@ -11,31 +11,31 @@
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
-          <h3 class="masthead-brand">Currency Convertor</h3>
+          <h2 class="masthead-brand">Currency Converter</h3>
         </div>
       </header>
     </div>
     <input class="curr_input form-control mb-2 display-box center-item" type='number' min='0' placeholder="Enter amount..."></input>
     <br>
-    <!-- Convert In ALL DIRECTIONS -->
-    <div class='display-box'>
-    <strong> FROM: </strong>
-    <select id="CURR_FR" class="curr_select_one custom-select center-item">
-        <option value="EUR">EUR</option>
-        <option value="SDG">SDG</option>
-        <option value="USD" selected="">USD</option>
-      </select>
+    <div class='display-boxes'>
+      <div class='display-box'>
+        <strong> FROM: </strong>
+        <select id="CURR_FR" class="curr_select_one custom-select center-item">
+          <option value="EUR">EUR</option>
+          <option value="SDG">SDG</option>
+          <option value="USD" selected="">USD</option>
+          </select>
+      </div>
+      <div class='display-box'>
+        <strong> TO: </strong>
+        <select id="CURR_FR" class="curr_select_two custom-select center-item">
+          <option value="EUR">EUR</option>
+          <option value="SDG">SDG</option>
+          <option value="USD" selected="">USD</option>
+        </select>
+      </div>
+      <button class='btn switch-button'><ion-icon name="repeat"></ion-icon></ion-icon></button>
     </div>
-    <div class='display-box'>
-      <strong> TO: </strong>
-    <select id="CURR_FR" class="curr_select_two custom-select center-item">
-      <option value="EUR">EUR</option>
-      <option value="SDG">SDG</option>
-      <option value="USD" selected="">USD</option>
-    </select>
-  </div>
-  <button class='btn switch-button'><ion-icon name="shuffle"></ion-icon></button>
-    <!-- <button class='btn btn-primary'>Convert!</button> -->
     <div class='results'>
       <div class="result"></div>
       <br>
