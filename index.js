@@ -28,11 +28,12 @@ value2Select.addEventListener('change', () => {
 //these two functions should not fetch data from the backend. store current conversion data locally
 //whenver we switch currencies.
 inputAmount.addEventListener('input', (e) => {
-  amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+  // amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+amountToAmountDiv.innerHTML = `<h4>${inputAmount.value} ${value1} equals ${(+currenctConversionRate) * (+inputAmount.value)} ${value2}</h4>`
 })
 inputAmount.addEventListener('change', (e) => {
-  amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
-
+  // amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+amountToAmountDiv.innerHTML = `<h4>${inputAmount.value} ${value1} equals ${(+currenctConversionRate) * (+inputAmount.value)} ${value2}</h4>`
 })
 
 switchButton.addEventListener('click', () => {
@@ -97,5 +98,6 @@ function addDataToBackend(json){
 function renderData(json) {
   currenctConversionRate = `${json[`${value1}_${value2}`]}`
   resultDiv.innerHTML = `<h4>The current conversion rate is ${(+json[`${value1}_${value2}`])} ${value2} per ${value1}</h4>`
-  currenctConversionRate > 1 ? amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>` : amountToAmountDiv.innerHTML = `<h4>There is ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+  // currenctConversionRate > 1 ? amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>` : amountToAmountDiv.innerHTML = `<h4>There is ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+  amountToAmountDiv.innerHTML = `<h4>${inputAmount.value} ${value1} equals ${(+currenctConversionRate) * (+inputAmount.value)} ${value2}</h4>`
 }

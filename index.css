@@ -1,6 +1,6 @@
 /* TODO:  *//* REDUCE WIDTH AND DISPLAY INLINE FOR INPUTS */
 
-@media only screen and (min-width: 592px) {
+@media only screen and (min-width: 638px) {
   input.curr_input.form-control.mb-2{
     display: inline;
     width:250px;
@@ -22,7 +22,7 @@
   }
 }
 
-@media only screen and (max-width: 592px) {
+@media only screen and (max-width: 638px) {
   .display-box {
     display: grid;
   }
@@ -61,6 +61,18 @@ body {
   padding: 2% 2% 2% 0;
 }
 
+.fade-in-down {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 @-webkit-keyframes fadeInDown {
       0% {
          opacity: 0;
@@ -81,16 +93,4 @@ body {
        opacity: 1;
        transform: translateY(0);
     }
- }
-
- .fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
- }
-
- .animated {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
  }
