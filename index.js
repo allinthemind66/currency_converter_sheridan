@@ -46,16 +46,7 @@ switchButton.addEventListener('click', () => {
   value1Select.selectedIndex = val2Sel;
   value2Select.selectedIndex = val1SelCopy;
   getData();
-})
-
-// submitButton.addEventListener('click', () => {
-//   try {
-//     getData()
-//   }
-//   catch(error) {
-//     console.log(error);
-//   }
-// });
+});
 
 //GET ALL DATA FROM BACKEND
 // TODO: MAKE THIS A LITTLE CLEANER. DO WE REALLY NEED ALL CURRENCY DATA??
@@ -64,7 +55,6 @@ async function getData() {
   .then(resp => resp.json())
   .then(json => checkDataForContent(json))
 }
-
 
 function checkDataForContent(json){
   //if value is in backend json response...
@@ -107,5 +97,5 @@ function addDataToBackend(json){
 function renderData(json) {
   currenctConversionRate = `${json[`${value1}_${value2}`]}`
   resultDiv.innerHTML = `<h4>The current conversion rate is ${(+json[`${value1}_${value2}`])} ${value2} per ${value1}</h4>`
-  amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
+  currenctConversionRate > 1 ? amountToAmountDiv.innerHTML = `<h4>There are ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>` : amountToAmountDiv.innerHTML = `<h4>There is ${(+currenctConversionRate) * (+inputAmount.value)} ${value2} per ${inputAmount.value} ${value1}</h4>`
 }

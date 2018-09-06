@@ -15,6 +15,11 @@
   input {
     margin-top: 25px;
   }
+  .results {
+    font-size: 18px;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
 
 @media only screen and (max-width: 592px) {
@@ -32,7 +37,9 @@
     width:250px;
   }
   .results {
-    font-size: 16px;
+    font-size: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
@@ -43,10 +50,9 @@ body {
   margin-top: 12%;
 }
 
+
 .results {
   margin-top: 50px;
-  margin-left: 25%;
-  margin-right: 25%;
   border-radius: 15px;
   padding: 15px;
   border: 2px solid rgb(243, 246, 246);
@@ -55,6 +61,36 @@ body {
   padding: 2% 2% 2% 0;
 }
 
-/* .display-box {
-  margin-top: 25px;
-} */
+@-webkit-keyframes fadeInDown {
+      0% {
+         opacity: 0;
+         -webkit-transform: translateY(-20px);
+      }
+      100% {
+         opacity: 1;
+         -webkit-transform: translateY(0);
+      }
+   }
+
+ @keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+ }
+
+ .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+ }
+
+ .animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ }
