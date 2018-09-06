@@ -9,6 +9,12 @@
     display: inline;
     width:250px;
   }
+  .display-box {
+    display: inline;
+  }
+  input {
+    margin-top: 25px;
+  }
 }
 
 @media only screen and (max-width: 592px) {
@@ -25,4 +31,30 @@
   select.curr_select_one.custom-select, select.curr_select_two.custom-select {
     width:250px;
   }
+  .results {
+    font-size: 16px;
+  }
 }
+
+body {
+  background-color: #BCCCE0;
+}
+.cover-container {
+  margin-top: 12%;
+}
+
+.results {
+  margin-top: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 15px;
+  padding: 15px;
+  border: 2px solid rgb(243, 246, 246);
+  border-radius: 10px;
+  background-color: rgb(252, 252, 253);
+  padding: 2% 2% 2% 0;
+}
+
+/* .display-box {
+  margin-top: 25px;
+} */
