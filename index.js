@@ -9,6 +9,7 @@ let inputAmount = document.querySelector('.curr_input')
 let value1 = value1Select.value;
 let value2 = value2Select.value;
 let currenctConversionRate;
+inputAmount.value = 1
 
 // Get initial data
 getData()
